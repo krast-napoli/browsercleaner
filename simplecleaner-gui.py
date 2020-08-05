@@ -3,9 +3,8 @@ from tkinter import *
 
 root = Tk()
 
-e = Entry(width=20)
-b = Button (text="Change")
-l = Label(bg='black', fg='white', width=20)
+b = Button (text="Clean history")
+l = Label(bg='black', fg='white', width=30)
 
 username = os.getlogin()
 
@@ -15,11 +14,11 @@ chromepath = path1 + '\\' + '\\' + path2
 
 def clean_history(event):
     os.remove (chromepath)
+    l.['text'] = 'Done!'
 
 
 b.bind('<Button-1>', clean_history)
 
-e.pack()
 b.pack()
 l.pack()
 root.mainloop()
